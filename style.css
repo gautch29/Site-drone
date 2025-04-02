@@ -193,4 +193,15 @@
   footer p {
     font-size: 1em;
   }
-  
+
+  @media (min-width: 768px) {
+    /* Le premier membre occupe toute la largeur en tenant compte de ses marges (20px de chaque côté, donc 40px au total) */
+    .team-members .team-member:first-child {
+      flex: 0 0 calc(100% - 40px);
+    }
+    
+    /* Les trois autres se placent côte à côte */
+    .team-members .team-member:nth-child(n+2) {
+      flex: 1 1 calc(33.33% - 40px);
+    }
+  }
