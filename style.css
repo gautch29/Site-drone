@@ -243,10 +243,52 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  /* Navbar : réduire les marges et adapter la disposition */
+  .navbar {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .navbar .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  .navbar .nav-links li {
+    margin: 0 5px;
+  }
+  
+  /* Hero Section : ajuster la hauteur et le padding */
   .hero {
-    background-attachment: scroll;
-    min-height: 70vh;
-    background-position: center center;
+    height: 70vh;
+    padding: 0 10px;
+    background-attachment: scroll; /* Améliore les performances sur mobile */
+  }
+  
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  }
+  
+  /* Boutons : légèrement agrandir pour faciliter le tap */
+  .btn,
+  form button {
+    padding: 8px 16px;
+    font-size: 1.1em;
   }
 }
 
