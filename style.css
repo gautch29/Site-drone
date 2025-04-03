@@ -1,207 +1,281 @@
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #fff;
-    background: url('drone.png') no-repeat center center fixed;
-    background-size: cover;
-  }
-  /* Navbar Styles */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.7);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar .logo {
-    color: #fff;
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  
-  .navbar .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  
-  .navbar .nav-links li {
-    margin: 0 15px;
-  }
-  
-  .navbar .nav-links a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar .nav-links a:hover {
-    color: #f39c12;
-  }
-  
-  /* Hero Section */
-  .hero {
-    height: 100vh;
-    background: url('drone-bg.jpg') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    padding: 0 20px;
-  }
-  
-  .hero h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 1.5em;
-    margin-bottom: 40px;
-  }
-  
-  .btn {
-    display: inline-block;
-    background: #f39c12;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.2em;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-  }
-  
-  .btn:hover {
-    background: #e67e22;
-  }
-  
-  /* Sections */
-  section {
-    padding: 100px 0;
-    margin-top: 80px; /* To avoid overlap with fixed navbar */
-  }
-  
-  .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.5em;
-  }
-  
-  p {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.1em;
-  }
-  
-  /* Features List */
-  .features-list {
-    list-style: none;
-    text-align: center;
-    font-size: 1.2em;
-  }
-  
-  .features-list li {
-    margin: 10px 0;
-  }
-  
-  /* Team Section */
-  .team-members {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .team-member {
-    flex: 1 1 30%;
-    text-align: center;
-    margin: 20px;
-    background: #fff;
-    color:#333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  /* Buy Form */
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  form input {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  form button {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    background: #f39c12;
-    color: #fff;
-    font-size: 1.1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  form button:hover {
-    background: #e67e22;
-  }
-  
-  /* Footer */
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  footer p {
-    font-size: 1em;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  @media (min-width: 768px) {
-    /* Le premier membre occupe toute la largeur en tenant compte de ses marges (20px de chaque côté, donc 40px au total) */
-    .team-members .team-member:first-child {
-      flex: 0 0 calc(100% - 40px);
-    }
-    
-    /* Les trois autres se placent côte à côte */
-    .team-members .team-member:nth-child(n+2) {
-      flex: 1 1 calc(33.33% - 40px);
-    }
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background: url('drone.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Navbar avec effet glassy clarifié, outline et éloignée des bords */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6); /* augmentation de l'opacité pour plus de clarté */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar .nav-links li {
+  margin: 0 15px;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #f39c12;
+}
+
+/* Hero Section avec overlay glassy (sans ::before) */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('hero.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 4em;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* Shadow à 45° plus appuyé */
+}
+
+.hero p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* Shadow à 45° plus appuyé */
+}
+
+/* Boutons unifiés avec effet glass et drop shadow */
+.btn,
+form button {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Pour les boutons hors formulaire, conserver le fond uni */
+.btn {
+  background: #f39c12;
+}
+
+.btn:hover {
+  background: #e67e22;
+  transform: scale(1.05);
+}
+
+/* Bouton d'achat revisité avec effet glassy */
+form button {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(243, 156, 18, 0.2);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 1.1em;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+form button:hover {
+  background: rgba(230, 126, 34, 0.3);
+  transform: scale(1.05);
+}
+
+/* Sections */
+section {
+  padding: 100px 0;
+  margin-top: 80px; /* évite le chevauchement avec la navbar */
+}
+
+/* Conteneur avec effet glassy et drop shadow */
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px; /* légère réduction du border-radius */
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.features-list li {
+  margin: 10px 0;
+}
+
+/* Team Section avec cartes glassy et drop shadow */
+.team-members {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  flex: 1 1 30%;
+  text-align: center;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Formulaire d'achat */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Footer avec effet glassy pour le fond, sans effet glassy sur le copyright */
+footer {
+  background: rgba(51, 51, 51, 0.8);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  font-size: 1em;
+  backdrop-filter: none;
+  background: none;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .team-members .team-member:first-child {
+    flex: 0 0 calc(100% - 40px);
   }
+  
+  .team-members .team-member:nth-child(n+2) {
+    flex: 1 1 calc(33.33% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+    min-height: 70vh;
+    background-position: center center;
+  }
+}
+
+.tilt {
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Définition de l'animation wiggle fluide et sinusoïdale */
+@keyframes wiggle {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  75% {
+    transform: perspective(1000px) rotateX(-2deg) rotateY(-2deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+/* Application de l'animation sur l'élément avec classe .tilt lors du survol */
+.tilt:hover {
+  animation: wiggle 2.5s ease-in-out infinite;
+}
