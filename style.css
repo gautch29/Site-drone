@@ -270,6 +270,8 @@ footer p {
     height: 70vh;
     padding: 0 10px;
     background-attachment: scroll; /* Améliore les performances sur mobile */
+    background-size: contain;
+    background-position: center;
   }
   
   .hero h1 {
